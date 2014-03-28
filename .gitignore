@@ -16,3 +16,8 @@
 *.exe
 *.out
 *.app
+
+# Build files
+.waf-*
+.lock-*
+build/

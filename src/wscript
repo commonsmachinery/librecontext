@@ -1,0 +1,13 @@
+#! /usr/bin/env python
+
+top = '..'
+
+def build(bld):
+    bld.install_files('${PREFIX}/include', 'recontext.h')
+    bld.shlib(
+        source = 'recontext.c',
+        target = 'recontext',
+        vnum   = '0.1.0',
+        use    = 'REDLAND',
+        export_includes = "../src",
+    )
