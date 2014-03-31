@@ -4,10 +4,11 @@ top = '..'
 
 def build(bld):
     bld.install_files('${PREFIX}/include', 'recontext.h')
+    bld.install_files('${PREFIX}/include', 'recontext_gexiv2.h')
     bld.shlib(
-        source = 'recontext.c',
+        source = ['recontext.c', 'recontext_gexiv2.c'],
         target = 'recontext',
         vnum   = '0.1.0',
-        use    = 'REDLAND',
+        use    = ['REDLAND', 'GEXIV2', 'GLIB_2.0', 'UUID'],
         export_includes = "../src",
     )
